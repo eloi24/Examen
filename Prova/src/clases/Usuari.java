@@ -35,11 +35,11 @@ public  abstract class Usuari{
         this.follows = follows;
     }
     public abstract void MostraMenu();
-    public abstract void CrearPost();
-    public abstract void EliminarPost();
+    public abstract Post CrearPost(Usuari user);
+    public abstract void EliminarPost(ArrayList<Post>posts);
     public abstract void SeguirEditor();
     public abstract void VeureSegueixo();
-    public abstract void MostrarMur();
+    public abstract void MostrarMur(ArrayList<Post>posts);
     public abstract void ModificarLector();
     public abstract void LlistarEditors();
     public abstract void LlistarLectors();

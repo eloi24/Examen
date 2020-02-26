@@ -3,6 +3,7 @@ package functions;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import clases.Post;
 import clases.Usuari;
 
 public class Funcions{
@@ -27,10 +28,10 @@ public class Funcions{
         System.out.println("******************************");
         System.out.println();
     }
-    public static boolean ComprovaUser(ArrayList<Usuari>users,String user){
+    public static boolean ComprovaUser(ArrayList<Usuari>usuaris,String username){
         boolean comprova = false;
-        for (Usuari u : users) {
-            if (u.getNomusuari().equals(user)){
+        for (Usuari u : usuaris) {
+            if (u.getNomusuari().equals(username)){
                 comprova=true;
             }
             else{
@@ -50,5 +51,11 @@ return comprova;
             
         }
         return usuariretorna;
+    }
+    public static void mostraposts(ArrayList<Post>posts){
+        for (Post p : posts) {
+            System.out.println(posts.indexOf(p)+1 +p.MostraPost2());   
+               
+           }
     }
 }

@@ -1,5 +1,7 @@
 package clases;
 
+import java.util.ArrayList;
+
 public class Lector extends Usuari {
     boolean major;
 
@@ -15,11 +17,7 @@ public class Lector extends Usuari {
         super(nomusuari, passwd);
     }
 
-    @Override
-    public void CrearPost() {
-        // TODO Auto-generated method stub
-
-    }
+   
 
     @Override
     public void LlistarEditors() {
@@ -46,7 +44,7 @@ public class Lector extends Usuari {
     }
 
     @Override
-    public void MostrarMur() {
+    public void MostrarMur(ArrayList<Post>posts) {
         // TODO Auto-generated method stub
 
     }
@@ -64,9 +62,15 @@ public class Lector extends Usuari {
     }
 
     @Override
-    public void EliminarPost() {
+    public void EliminarPost(ArrayList<Post>posts) {
         // TODO Auto-generated method stub
 
+    }
+
+    @Override
+    public Post CrearPost(Usuari user) {
+        // TODO Auto-generated method stub
+        return null;
     }
 
     

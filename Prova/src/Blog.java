@@ -34,34 +34,36 @@ public class Blog{
             System.out.println("Introdueix el teu username: ");
             String username=sc.nextLine();
             if(Funcions.ComprovaUser(usuaris, username)){
+                Usuari userlogin = Funcions.BuscaUser(usuaris, username);
                 System.out.println("Introdueix la teva password: ");
-                passwd=sc.nextLine();
-                if (!Funcions.comprovapasswd(Funcions.BuscaUser(usuaris, username).getPasswd(), passwd1)){
+                passwd1=sc.nextLine();
+                if (Funcions.comprovapasswd(userlogin.getPasswd(), passwd1)){
+                    System.out.println();
 System.out.println("Usuari Autenticat amb èxit");
-System.out.println("El rol assignat per el teu usuari és: "+Funcions.BuscaUser(usuaris, username).getClass().getSimpleName()
+System.out.println("El rol assignat per el teu usuari és: "+userlogin.getClass().getSimpleName()
 );
                     loopasso:while(true){
-                        Funcions.BuscaUser(usuaris, username).MostraMenu();
+                        userlogin.MostraMenu();
                         int choice=sc.nextInt();
                         sc.nextLine();
                         switch(choice){
                             case 1:
-                            Funcions.BuscaUser(usuaris, username).CrearPost();
+                            posts.add(userlogin.CrearPost(userlogin));
                             break;
                             case 2:
-                            Funcions.BuscaUser(usuaris, username).MostrarMur();
+                            userlogin.MostrarMur(posts);
                             break;
                             case 3:
-                            Funcions.BuscaUser(usuaris, username).EliminarPost();
+                            userlogin.EliminarPost(posts);
                             break;
                             case 4:
-                            Funcions.BuscaUser(usuaris, username).ModificarLector();
+                            userlogin.ModificarLector();
                             break;
                             case 5:
-                            Funcions.BuscaUser(usuaris, username).LlistarEditors();
+                            userlogin.LlistarEditors();
                             break;
                             case 6:
-                            Funcions.BuscaUser(usuaris, username).LlistarLectors();
+                            userlogin.LlistarLectors();
                             break;
                             case 7:
                             break loopasso;
