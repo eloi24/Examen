@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Botiga",
+            "request": "launch",
+            "mainClass": "botiga.Botiga",
+            "projectName": "Botiga"
+        }
+    ]
+}
